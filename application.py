@@ -26,6 +26,10 @@ def pretty():
 def follow():
 	return render_template("follow.html")
 
+@app.route("/energy")
+def energy():
+	return render_template("energy.html")
+
 @app.route("/contact")
 def contact():
 	return "not done yet brah"
