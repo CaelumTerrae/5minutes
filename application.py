@@ -32,4 +32,4 @@ def contact():
 
 @app.route("/browse")
 def browse():
-	return "not done yet brah"
+	return render_template("browse.html")
