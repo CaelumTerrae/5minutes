@@ -34,6 +34,10 @@ def energy():
 def rotate():
 	return render_template("rotate.html")
 
+@app.route("/montecarlo")
+def montecarlo():
+	return render_template("montecarlo.html")
+
 @app.route("/browse")
 def browse():
 	return render_template("browse.html")
