@@ -30,9 +30,9 @@ def follow():
 def energy():
 	return render_template("energy.html")
 
-@app.route("/contact")
-def contact():
-	return "not done yet brah"
+@app.route("/rotate")
+def rotate():
+	return render_template("rotate.html")
 
 @app.route("/browse")
 def browse():
