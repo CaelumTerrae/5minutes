@@ -24,12 +24,12 @@ This will guide you to running the environment on your computer
 
 First you will need to set up the Flask environment. If running on a Mac use:
 ```
-export FLASK_APP=application.py
+export FLASK_APP=app.py
 ```
 
 Windows:
 ```
-set FLASK_APP=application.py
+set FLASK_APP=app.py
 ```
 
 Next, enter:
