@@ -3,12 +3,12 @@ var elem;
 var blocks = 1;
 
 function setup(){
+	// Standard window setup
 	r = windowWidth < windowHeight ? windowWidth : windowHeight;
 	createCanvas(r+1, r);
 	ellipse(0,r, r*2);
 	frameRate(10)
 	elem = document.getElementById("label");
-	elem.innerHTML = "work?"
 	rectMode(CORNER)
 	noFill()
 }
@@ -25,6 +25,8 @@ function draw(){
 	}
 	ellipse(0,r, r*2);
 	blocks++;
+
+	// Divides by r^2 to make unit circle. Approximates pi
 	elem.innerHTML = 4 * area / r / r;
 }
 

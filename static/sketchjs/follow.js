@@ -8,6 +8,8 @@ function setup() {
 
 function draw() {
 	background(0)
+
+	// Draws lines from all points to mouse in respective colors
 	for(var i = 0; i < points.length; i++){
 		stroke(colors[i].blue, colors[i].red, colors[i].green)
 		line(points[i].x, points[i].y, mouseX, mouseY);
@@ -15,21 +17,21 @@ function draw() {
 }
 
 function mouseClicked() {
-  points.push(new Point(mouseX, mouseY));
-  colors.push(new Color());
+	// Generates new point and respective color for point in parallel array.
+  	points.push(new Point(mouseX, mouseY));
+  	colors.push(new Color());
 }
 
 function keyPressed(){
-  points = [];
-  colors = [];
-  console.log("reached here")
-  return false;
+  	points = [];
+  	colors = [];
+  	return false;
 }
 
 
 function Point(x, y) {
-  this.x = x;
-  this.y = y;
+  	this.x = x;
+  	this.y = y;
 }
 
 function Color() {

@@ -9,10 +9,10 @@ function setup(){
 	ellipse(0,r, r*2);
 	frameRate(10)
 	elem = document.getElementById("label");
-	elem.innerHTML = "work?"
 }
 
 function draw(){
+	// Picks random x and y to throw dart, plotted as green if inside circle, red if not
 	x = random(0,r);
 	y = random(0,r);
 
@@ -25,6 +25,7 @@ function draw(){
 	total++;
 	ellipse(x, r - y, 8, 8);
 
+	// Ratio of darts inside circle to total darts is ~1/4 PI, gets closer with more darts.
 	elem.innerHTML = 4 * inside / total;
 }
 
