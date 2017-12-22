@@ -38,6 +38,10 @@ def rotate():
 def montecarlo():
 	return render_template("montecarlo.html")
 
+@app.route("/riemann")
+def riemann():
+	return render_template("riemann.html")
+
 @app.route("/browse")
 def browse():
 	return render_template("browse.html")
