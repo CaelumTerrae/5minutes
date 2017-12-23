@@ -2,6 +2,9 @@ from flask import Flask, jsonify,redirect, render_template, request
 
 app = Flask(__name__)
 
+UNLABELED_SKETCHES = ['slopefield', 'prettycircles', 'follow', 'energy', 'rotate']
+LABELED_SKETCHES = ['montecarlo', 'regular', 'riemann']
+
 # Ensure responses aren't cached
 @app.after_request
 def after_request(response):
@@ -14,37 +17,15 @@ def after_request(response):
 def index():
     return render_template("index.html")
 
-@app.route("/slope")
-def slope():
-	return render_template("slopefield.html")
+@app.route("/sketch/<name>")
+def sketch(name):
+	if name in UNLABELED_SKETCHES:
+		return render_template("unlabeled.html", sketch=name);
 
-@app.route("/prettycircles")
-def pretty():
-	return render_template("prettycircles.html")
+	if name in LABELED_SKETCHES:
+		return render_template("labeled.html", sketch=name);
 
-@app.route("/theyfollow")
-def follow():
-	return render_template("follow.html")
-
-@app.route("/energy")
-def energy():
-	return render_template("energy.html")
-
-@app.route("/rotate")
-def rotate():
-	return render_template("rotate.html")
-
-@app.route("/montecarlo")
-def montecarlo():
-	return render_template("montecarlo.html")
-
-@app.route("/regular")
-def regular():
-	return render_template("regular.html")
-
-@app.route("/riemann")
-def riemann():
-	return render_template("riemann.html")
+	return "that sketch does not exist (yet)";
 
 @app.route("/browse")
 def browse():
