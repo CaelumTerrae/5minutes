@@ -2,7 +2,7 @@ from flask import Flask, jsonify,redirect, render_template, request
 
 app = Flask(__name__)
 
-UNLABELED_SKETCHES = ['slopefield', 'prettycircles', 'follow', 'energy', 'rotate']
+UNLABELED_SKETCHES = ['slopefield', 'prettycircles', 'follow', 'energy', 'rotate', 'perceptron']
 LABELED_SKETCHES = ['montecarlo', 'regular', 'riemann']
 
 # Ensure responses aren't cached
